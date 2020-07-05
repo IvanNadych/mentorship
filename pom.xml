@@ -181,11 +181,22 @@
         </dependency>
 
     </dependencies>
+    <profiles>
+        <profile>
+            <id>if-suite-exists</id>
+            <activation>
+                <property>
+                    <name>!env.SUITES</name>
+                </property>
+            </activation>
+            <properties>
+                <suites>global.suites</suites>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
-
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -219,8 +230,7 @@
                         </surefire.application.password>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>autoria.xml</suiteXmlFile>
-<!--                        <suiteXmlFile>article.xml</suiteXmlFile>-->
+                        <suiteXmlFile>${suites}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <reportsDirectory>${testng.reports.directory}</reportsDirectory>
                     <argLine>
@@ -245,7 +255,6 @@
                         <configuration>
                             <executable>allureServer.bat</executable>
                             <arguments>
-
                             </arguments>
                         </configuration>
                     </execution>
@@ -262,9 +271,7 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
-
         </plugins>
     </build>
-
 
 </project>
