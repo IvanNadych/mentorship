@@ -7,7 +7,7 @@
 
     <test name="FindTheMostExpensiveCar" verbose="9" >
         <classes>
-            <class name="com.softserve.mentorship.tests.SearchCar"/>
+            <class name="com.softserve.mentorship.autoria.tests.SearchCar"/>
         </classes>
     </test> <!-- Test -->
 

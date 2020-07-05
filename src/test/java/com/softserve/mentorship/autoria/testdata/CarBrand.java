@@ -1,4 +1,4 @@
-package com.softserve.mentorship.testdata;
+package com.softserve.mentorship.autoria.testdata;
 
 public enum CarBrand {
     BMW("BMW"),

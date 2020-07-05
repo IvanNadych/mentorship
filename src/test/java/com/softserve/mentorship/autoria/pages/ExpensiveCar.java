@@ -1,4 +1,4 @@
-package com.softserve.mentorship.pages;
+package com.softserve.mentorship.autoria.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

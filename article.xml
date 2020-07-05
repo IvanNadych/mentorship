@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ArticleProject">
+    <parameter name="url" value="http://localhost:8080/article"/>
+    <parameter name="implicitWait" value="10"/>
+
+    <test name="RegisterNewHotel" verbose="9" >
+        <classes>
+            <class name="com.softserve.mentorship.articleproject.test.RegisterNewHotelTest"/>
+        </classes>
+<!--        <packages>-->
+<!--            <package name="com.softserve.mentorship.articleproject.test.RegisterNewHotelTest">-->
+<!--                <include name="verifyThatUserCanEditGlobalRating"/>-->
+<!--            </package>-->
+<!--        </packages>-->
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->

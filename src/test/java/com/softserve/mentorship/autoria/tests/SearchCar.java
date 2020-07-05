@@ -1,9 +1,9 @@
-package com.softserve.mentorship.tests;
+package com.softserve.mentorship.autoria.tests;
 
-import com.softserve.mentorship.pages.ExpensiveCar;
-import com.softserve.mentorship.pages.SearchResult;
-import com.softserve.mentorship.testdata.CarBrand;
-import com.softserve.mentorship.testdata.Sorting;
+import com.softserve.mentorship.autoria.pages.ExpensiveCar;
+import com.softserve.mentorship.autoria.pages.SearchResult;
+import com.softserve.mentorship.autoria.testdata.CarBrand;
+import com.softserve.mentorship.autoria.testdata.Sorting;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import java.util.Map;

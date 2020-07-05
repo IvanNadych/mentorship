@@ -1,7 +1,7 @@
-package com.softserve.mentorship.pages;
+package com.softserve.mentorship.autoria.pages;
 
-import com.softserve.mentorship.testdata.CarBrand;
-import com.softserve.mentorship.testdata.Sorting;
+import com.softserve.mentorship.autoria.testdata.CarBrand;
+import com.softserve.mentorship.autoria.testdata.Sorting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

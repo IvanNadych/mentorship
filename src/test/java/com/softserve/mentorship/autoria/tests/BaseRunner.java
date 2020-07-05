@@ -1,6 +1,6 @@
-package com.softserve.mentorship.tests;
+package com.softserve.mentorship.autoria.tests;
 
-import com.softserve.mentorship.pages.SearchResult;
+import com.softserve.mentorship.autoria.pages.SearchResult;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
