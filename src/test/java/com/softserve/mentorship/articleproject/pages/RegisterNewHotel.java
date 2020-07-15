@@ -484,5 +484,13 @@ public class RegisterNewHotel extends BasePage {
         return result;
     }
 
+    private WebElement getQuitElement(){
+        return driver.findElement(By.xpath("(//div[contains(@class,'ui-menu ui-menubar')]//span[text()='Quit'])[2]"));
+
+    }
+    public void clickQuitButton(){
+        getQuitElement().click();
+    }
+
 
 }

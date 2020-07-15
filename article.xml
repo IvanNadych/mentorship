@@ -9,11 +9,6 @@
         <classes>
             <class name="com.softserve.mentorship.articleproject.test.RegisterNewHotelTest"/>
         </classes>
-<!--        <packages>-->
-<!--            <package name="com.softserve.mentorship.articleproject.test.RegisterNewHotelTest">-->
-<!--                <include name="verifyThatUserCanEditGlobalRating"/>-->
-<!--            </package>-->
-<!--        </packages>-->
     </test> <!-- Test -->
 
 </suite> <!-- Suite -->

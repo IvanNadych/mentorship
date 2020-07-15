@@ -14,17 +14,18 @@ public abstract class BaseTest {
     public static Logger log = Logger.getLogger("LOGGER:");
 
     @BeforeClass
-    public void beforeClass() {
+    @Parameters("implicitWait")
+    public void beforeClass( int time) {
 
-            WebDriverManager.chromedriver().setup();
-    }
-
-    @BeforeMethod
-    @Parameters({"url","implicitWait"})
-    public void setBrowserProperties(String url, int time) {
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+    }
+
+    @BeforeMethod
+    @Parameters("url")
+    public void setBrowserProperties(String url) {
         driver.get(url);
 
     }
@@ -35,8 +36,12 @@ public abstract class BaseTest {
 
     @AfterMethod
     public void tearDown() {
+        driver.manage().deleteAllCookies();
+        loadRegisterNewHotelPage().clickQuitButton();
+    }
+    @AfterClass
+    public void afterTest(){
         driver.quit();
-
     }
 
 }

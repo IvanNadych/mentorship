@@ -14,6 +14,10 @@ Do search for cars brand: *Mercedes* and *BMW*
 * Maven
 * Selenium WebDriver
 
+**Test Run**
+* To run the test use the command in cmd:
+* mvn test -Dsurefire.suiteXmlFiles= 'file.xml'
+
 **Authors**
 * Ivan Nadych
 # 

@@ -55,14 +55,12 @@
     <dependencies>
 
         <!-- - - - - - Test - - - - - -->
-        <dependency>
+       <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${org.junit.version}</version>
             <scope>test</scope>
         </dependency>
-
-
 
         <dependency>
             <groupId>org.testng</groupId>
@@ -172,12 +170,6 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
             <!-- <scope>test</scope> -->
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13</version>
-            <scope>compile</scope>
         </dependency>
 
     </dependencies>
