@@ -3,9 +3,13 @@ package com.softserve.mentorship.autoria.pages;
 import com.softserve.mentorship.autoria.testdata.CarBrand;
 import com.softserve.mentorship.autoria.testdata.Sorting;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.*;
 import java.util.logging.Logger;
@@ -44,12 +48,12 @@ public abstract class CarsPage {
     }
 
     //carBrand
-    private WebElement getCarBrand() {
-        return driver.findElement(By.xpath("//div[@class='m-rows']//label[@for='brandTooltipBrandAutocompleteInput-brand']"));
-    }
+//    private WebElement getCarBrand() {
+//        return driver.findElement(By.xpath("//div[@class='m-rows']//label[@for='brandTooltipBrandAutocompleteInput-brand']"));
+//    }
 
     public void clickCarBrand() {
-        getCarBrand().click();
+        driver.findElement(By.xpath("//div[@id='brandTooltipBrandAutocomplete-brand']//label[@class='text']")).click();
         log.info("Click Car Brand Dropdown");
     }
 
@@ -94,7 +98,7 @@ public abstract class CarsPage {
         List<Double> list = new ArrayList<>();
         List<String> prices = new ArrayList<>();
         for (WebElement element : getCarPrice()) {
-            prices.add(element.getText().trim().replace(" ", ""));
+            prices.add(element.getText().trim().replaceAll("[ |,]", ""));
             prices.removeIf(e -> e.startsWith("д") || e.startsWith("{") || e.equals(""));
         }
         for (String str : prices) {
@@ -159,12 +163,20 @@ public abstract class CarsPage {
         getSortingOption(attributeName).get(0).click();
         log.info("Select sorting order from dropdown: " + attributeName);
     }
+
+    public void setSorting(Sorting descOrder) {
+        clickSorting();
+        clickSelectedSortingOption(descOrder);
+        Actions actions = new Actions(driver);
+        actions.pause(3).perform();
+    }
+
     public boolean ifCarSortedInDesc() {
         boolean result = false;
         List<Double> list = new ArrayList<>();
         List<String> prices = new ArrayList<>();
         for (WebElement element : getCarPrice()) {
-            prices.add(element.getText().trim().replace(" ", ""));
+            prices.add(element.getText().trim().replaceAll("[ |,]", ""));
             prices.removeIf(e -> e.startsWith("д") || e.startsWith("{") || e.equals(""));
         }
         for (String str : prices) {
@@ -181,12 +193,6 @@ public abstract class CarsPage {
         return result;
     }
 
-    public void setSorting(Sorting descOrder) {
-        clickSorting();
-        clickSelectedSortingOption(descOrder);
-        Actions actions = new Actions(driver);
-        actions.pause(3).perform();
-    }
 
 
     //Business logic
@@ -203,5 +209,6 @@ public abstract class CarsPage {
         clickSearchButton();
         return new SearchResult(driver);
     }
+
 
 }

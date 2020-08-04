@@ -42,8 +42,10 @@ public class SearchCar extends BaseRunner {
         //Verifying that cars are sorted now
         Assert.assertTrue(searchResult.ifCarSortedInDesc());
         log.info("Cars are sorted in: " + descOrder + "order");
+//        Thread.sleep(1000);
 
         Map<Double,String> map = searchResult.priceAndNameOfCarThatBeSelected();
+//        Thread.sleep(1000);
         ExpensiveCar expensiveCar = searchResult.goToMostExpensiveCar();
 
         //Verify that the most expensive car eas selected
@@ -51,7 +53,7 @@ public class SearchCar extends BaseRunner {
 
     }
     @Test(priority = 2,dataProvider = "selectBMW")
-    public void ifTheMostExpensiveBMWSelected(CarBrand bmw,  Sorting descOrder){
+    public void ifTheMostExpensiveBMWSelected(CarBrand bmw,  Sorting descOrder) throws InterruptedException {
         log.info("Running test for car: " + bmw);
         SearchResult searchResult = loadApplication()
                             .goToSearchPage().selectCarBrand(bmw);
@@ -64,6 +66,7 @@ public class SearchCar extends BaseRunner {
         Assert.assertFalse(searchResult.ifCarSortedInDesc());
         log.info("Cars are not sorted in: " + descOrder + "order");
         searchResult.setSorting(descOrder);
+//        Thread.sleep(1000);
 
         //Verifying that cars are sorted now
         Assert.assertTrue(searchResult.ifCarSortedInDesc());
