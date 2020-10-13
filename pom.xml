@@ -22,7 +22,7 @@
         <jdk.compiler.version>1.8</jdk.compiler.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <!-- - - - - - Test - - - - - -->
-        <org.junit.version>4.13</org.junit.version>
+        <org.junit.version>4.13.1</org.junit.version>
         <!-- <org.testng.version>7.1.0</org.testng.version> -->
         <org.testng.version>6.14.3</org.testng.version>
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
